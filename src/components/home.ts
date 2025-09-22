@@ -24,11 +24,11 @@ export class Home implements AfterViewInit, OnDestroy {
   activeSection = signal<string | null>(null);
 
   posts = [
-    { title: 'Haftalık Etkinlikler', image: '/posts/sohbet.jpeg' },
-    { title: 'Değerli İş Birlikleri', image: '/posts/meetScreen.jpeg' },
-    { title: 'Ücretsiz Eğitimler', image: '/posts/python-course.jpeg' },
-    { title: 'Özel Konu Sunumları', image: '/posts/session.jpeg' },
-    { title: 'WhatsApp Paylaşım Platformu', image: '/posts/wp.jpeg' }
+    { title: 'Haftalık Etkinlikler', image: 'posts/sohbet.jpeg' },
+    { title: 'Değerli İş Birlikleri', image: 'posts/meetScreen.jpeg' },
+    { title: 'Ücretsiz Eğitimler', image: 'posts/python-course.jpeg' },
+    { title: 'Özel Konu Sunumları', image: 'posts/session.jpeg' },
+    { title: 'WhatsApp Paylaşım Platformu', image: 'posts/wp.jpeg' }
   ];
 
   private observer: IntersectionObserver | null = null;
