@@ -52,7 +52,7 @@ export class DataService {
   private http = inject(HttpClient);
 
   private appDataResource = resource({
-    loader: () => lastValueFrom(this.http.get<AppData>('/data.json'))
+    loader: () => lastValueFrom(this.http.get<AppData>('data.json'))
   });
 
   instructors = computed(() => this.appDataResource.value()?.instructors || []);
