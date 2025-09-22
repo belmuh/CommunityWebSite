@@ -1,0 +1,50 @@
+<div class="container my-4">
+  <h2 class="text-center mb-3">Eğitmenler</h2>
+
+  <!-- Loading & Error states -->
+  @if (dataService.isloading()) {
+    <div class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Yükleniyor...</span>
+      </div>
+    </div>
+  }
+
+  @if (dataService.hasError()) {
+    <div class="alert alert-danger" role="alert">
+      Eğitmen bilgileri yüklenirken hata oluştu.
+    </div>
+  }
+
+  <!-- Bootstrap color instructor cards -->
+  <div class="row g-3">
+    @for (instructor of dataService.instructors(); track instructor.id) {
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title d-flex align-items-center mb-3">
+              <!-- Bootstrap color avatar -->
+              <div class="rounded-circle text-white d-flex align-items-center justify-content-center me-3" 
+                   [class]="'bg-' + getRandomColor(instructor.id)"
+                   style="width: 50px; height: 50px; font-size: 1.2rem;">
+                {{ instructor.name.charAt(0) }}
+              </div>
+              {{ instructor.name }}
+            </h5>
+            
+            <p class="card-text text-muted mb-3">{{ instructor.bio }}</p>
+            
+            <!-- Expertise badges -->
+            <div class="mb-3">
+              @for (skill of instructor.expertise; track skill) {
+                <span class="badge bg-secondary me-1 mb-1">{{ skill }}</span>
+              }
+            </div>
+            
+            <small class="text-muted">{{ instructor.email }}</small>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

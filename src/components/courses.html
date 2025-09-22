@@ -1,0 +1,52 @@
+<div class="container my-4">
+  <h2 class="text-center mb-4">Kurslar</h2>
+
+  <!-- Loading & Error states -->
+  @if (dataService.isloading()) {
+    <div class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Yükleniyor...</span>
+      </div>
+    </div>
+  }
+
+  @if (dataService.hasError()) {
+    <div class="alert alert-danger" role="alert">
+      Kurs bilgileri yüklenirken hata oluştu.
+    </div>
+  }
+
+  <!-- Course list -->
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      @for (course of courses(); track course.id) {
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <div class="rounded-circle text-white d-flex align-items-center justify-content-center" 
+                     [class]="'bg-' + getLevelColor(course.level)"
+                     style="width: 40px; height: 40px; font-size: 1rem;">
+                  {{ course.name.charAt(0) }}
+                </div>
+              </div>
+              <div class="col">
+                <h5 class="card-title mb-1">{{ course.name }}</h5>
+                @if (course.description) {
+                  <p class="card-text text-muted mb-2">{{ course.description }}</p>
+                }
+                <div class="d-flex gap-2">
+                  @if (course.level) {
+                    <span [class]="'badge text-bg-' + getLevelColor(course.level)">
+                    {{ course.level }}
+                    </span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

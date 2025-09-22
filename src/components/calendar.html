@@ -1,0 +1,65 @@
+<div class="d-flex flex-column align-items-center" style="min-height: 100vh; padding-top: 2rem;">
+
+  <h5 class="text-center mb-3">Ders Takvimi</h5>
+
+    <div class="card shadow-sm p-4" style="width: 900px;">
+   
+        <div class="card-body">
+      
+
+      <div class="d-flex justify-content-between mb-3">
+        <div>
+          <button class="btn btn-secondary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+            Önceki
+          </button>
+          <button class="btn btn-secondary" mwlCalendarToday [(viewDate)]="viewDate">
+            Bugün
+          </button>
+          <button class="btn btn-secondary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+            Sonraki
+          </button>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <h3 class="me-3 mb-0">{{ viewDate | calendarDate: view + 'ViewTitle' : 'tr' }}</h3>
+          <div class="btn-group">
+            <button class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">
+              Ay
+            </button>
+            <button class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
+              Hafta
+            </button>
+            <button class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">
+              Gün
+            </button>
+          </div>
+        </div>
+      </div>
+
+      @switch (view) {
+        @case (CalendarView.Month) {
+          <mwl-calendar-month-view 
+            [viewDate]="viewDate" 
+            [events]="events()" 
+          />
+        }
+        @case (CalendarView.Week) {
+        <mwl-calendar-week-view 
+        [events]="events()" 
+        [viewDate]="viewDate" 
+        [dayStartHour]="17"
+        [dayEndHour]="23" 
+        (eventTimesChanged)="eventTimesChanged($event)" />
+        }
+        @case (CalendarView.Day) {
+          <mwl-calendar-day-view 
+            [viewDate]="viewDate" 
+            [events]="events()" 
+            [dayStartHour]="17"
+            [dayEndHour]="23"
+          />
+        }
+      }
+    </div>
+  </div>
+</div>
