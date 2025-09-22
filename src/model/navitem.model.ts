@@ -5,7 +5,7 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'home', label: 'Ana Sayfa', icon: 'bi-info-circle' },
+  { id: 'home', label: 'Ana Sayfa', icon: 'bi-home' },
   { id: 'about', label: 'Hakkında', icon: 'bi-info-circle' },
   { id: 'courses', label: 'Kurslar', icon: 'bi-mortarboard-fill' },
   { id: 'instructors', label: 'Eğitmenler', icon: 'bi-people-fill' },
