@@ -26,6 +26,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/CommunityWebSite",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -96,6 +97,12 @@
             "styles": [
               "src/styles.css"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/CommunityWebSite/"
           }
         }
       }
