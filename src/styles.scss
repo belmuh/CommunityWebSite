@@ -1,31 +1,4 @@
-@font-face {
-  font-family: "bootstrap-icons";
-  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/fonts/bootstrap-icons.woff2") format("woff2"),
-       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/fonts/bootstrap-icons.woff") format("woff");
-}
 
-.bi {
-  font-family: "bootstrap-icons" !important;
-  font-style: normal;
-  font-weight: normal !important;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: -.125em;
-}
-
-/* Güncellenmiş icon listesi */
-.bi-home::before { content: "\f425"; }
-.bi-info-circle::before { content: "\f432"; }
-.bi-mortarboard-fill::before { content: "\f4d2"; }
-.bi-people-fill::before { content: "\f4d7"; }
-.bi-calendar-check::before { content: "\f2f1"; }
-.bi-chat-dots::before { content: "\f39f"; }
-.bi-linkedin::before { content: "\f472"; }
-.bi-book::before { content: "\f2bd"; }
-.bi-code-slash::before { content: "\f4f7"; }
-.bi-people::before { content: "\f4d6"; }
-.bi-lightbulb::before { content: "\f4c6"; }
 
 .carousel-item img {
   max-height: 600px;
