@@ -10,7 +10,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card shadow-lg p-3" style="height: 700px;">
-        <div class="carousel slide" data-bs-ride="carousel" #carousel>
+        <div class="carousel slide" data-bs-ride="carousel" #carousel id="mainCarousel">
           <div class="carousel-inner">
             @for (post of posts; track post.title) {
             <div class="carousel-item text-center" [class.active]="$first">
@@ -23,11 +23,11 @@
             </div>
             }
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>

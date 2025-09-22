@@ -9,9 +9,6 @@ import { Instructors } from './instructors';
 import { Navbar } from './navbar';
 import { Contact } from "./contact";
 
-// NAV_ITEMS dizisini kullanmıyoruz çünkü ViewChildren ile elementleri doğrudan alıyoruz
-// import { NAV_ITEMS } from '../model/navitem.model'; 
-
 @Component({
   selector: 'home',
   standalone: true,
@@ -34,7 +31,6 @@ export class Home implements AfterViewInit, OnDestroy {
   private observer: IntersectionObserver | null = null;
 
   ngAfterViewInit(): void {
-    // Karusel kodunuzu kullanıyorsanız burada bırakabilirsiniz
     const carouselElement = this.carousel.nativeElement;
     if (typeof window !== 'undefined' && (window as any).bootstrap?.Carousel) {
       new (window as any).bootstrap.Carousel(carouselElement, {
@@ -63,7 +59,6 @@ export class Home implements AfterViewInit, OnDestroy {
       });
     }, options);
 
-    // document.getElementById yerine @ViewChildren ile gelen listeyi kullanın
     this.sections.forEach(section => {
       this.observer?.observe(section.nativeElement);
     });
