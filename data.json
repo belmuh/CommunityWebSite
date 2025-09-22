@@ -1,0 +1,182 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "name": "Ahmet Yılmaz",
+      "bio": "5 yıllık yazılım deneyimi, React ve Node.js uzmanı",
+      "expertise": ["JavaScript", "React", "Node.js", "TypeScript"],
+      "email": "ahmet.yilmaz@kodlama.com",
+      "avatar": "https://example.com/avatars/ahmet.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Ayşe Kara", 
+      "bio": "10 yıllık Python deneyimi, veri bilimi ve yapay zeka uzmanı",
+      "expertise": ["Python", "Django", "Data Science", "Machine Learning"],
+      "email": "ayse.kara@kodlama.com",
+      "avatar": "https://example.com/avatars/ayse.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Mehmet Demir",
+      "bio": "Full-stack developer, cloud computing uzmanı",
+      "expertise": ["Java", "Spring Boot", "AWS", "Docker"],
+      "email": "mehmet.demir@kodlama.com",
+      "avatar": "https://example.com/avatars/mehmet.jpg"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "JavaScript Temelleri",
+      "description": "Modern JavaScript kavramları ve uygulamaları",
+      "duration": "8 hafta",
+      "level": "Başlangıç",
+      "category": "Web Geliştirme"
+    },
+    {
+      "id": 2,
+      "name": "Python Programlama", 
+      "description": "Python ile temelden ileri seviye programlama",
+      "duration": "10 hafta",
+      "level": "Orta",
+      "category": "Programlama"
+    },
+    {
+      "id": 3,
+      "name": "React ile Modern Web",
+      "description": "React, Redux ve modern frontend araçları",
+      "duration": "12 hafta",
+      "level": "İleri",
+      "category": "Web Geliştirme"
+    },
+    {
+      "id": 4,
+      "name": "Veri Bilimi ve Python",
+      "description": "Pandas, NumPy ve veri analizi teknikleri",
+      "duration": "14 hafta",
+      "level": "Orta",
+      "category": "Data Science"
+    }
+  ],
+  "timeSlots": [
+    {
+      "id": 1,
+      "day": "Pazartesi",
+      "startTime": "17:00",
+      "endTime": "18:30"
+    },
+    {
+      "id": 2,
+      "day": "Pazartesi", 
+      "startTime": "20:00",
+      "endTime": "22:30"
+    },
+    {
+      "id": 3,
+      "day": "Salı",
+      "startTime": "20:30",
+      "endTime": "23:00"
+    },
+    {
+      "id": 4,
+      "day": "Çarşamba",
+      "startTime": "18:00",
+      "endTime": "20:00"
+    },
+    {
+      "id": 5,
+      "day": "Perşembe",
+      "startTime": "19:00",
+      "endTime": "21:00"
+    },
+    {
+      "id": 6,
+      "day": "Cuma",
+      "startTime": "21:00",
+      "endTime": "22:00"
+    }
+  ],
+  "schedule": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "instructorId": 1,
+      "timeSlotId": 1,
+      "startDate": "2025-09-15",
+      "endDate": "2025-11-03",
+      "recurrence": "weekly",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "courseId": 2,
+      "instructorId": 2,
+      "timeSlotId": 4,
+      "startDate": "2025-09-17",
+      "endDate": "2025-11-26",
+      "recurrence": "weekly",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "courseId": 3,
+      "instructorId": 1,
+      "timeSlotId": 5,
+      "startDate": "2025-09-18",
+      "endDate": "2025-12-11",
+      "recurrence": "weekly",
+      "status": "upcoming"
+    },
+    {
+      "id": 4,
+      "courseId": 4,
+      "instructorId": 2,
+      "timeSlotId": 3,
+      "startDate": "2025-09-16",
+      "endDate": "2025-12-16",
+      "recurrence": "weekly",
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "courseId": 1,
+      "instructorId": 3,
+      "timeSlotId": 6,
+      "startDate": "2025-09-19",
+      "endDate": "2025-11-07",
+      "recurrence": "weekly",
+      "status": "upcoming"
+    },
+     {
+      "id": 6,
+      "courseId": 1,
+      "instructorId": 1,
+      "timeSlotId": 2,
+      "startDate": "2025-09-15",
+      "endDate": "2025-11-03",
+      "recurrence": "weekly",
+      "status": "active"
+    },
+     {
+      "id": 7,
+      "courseId": 1,
+      "instructorId": 3,
+      "timeSlotId": 6,
+      "startDate": "2025-09-22",
+      "endDate": "2025-11-07",
+      "recurrence": "weekly",
+      "status": "upcoming"
+    },
+     {
+      "id": 8,
+      "courseId": 1,
+      "instructorId": 1,
+      "timeSlotId": 2,
+      "startDate": "2025-09-24",
+      "endDate": "2025-11-03",
+      "recurrence": "weekly",
+      "status": "active"
+    }
+  ]
+}
