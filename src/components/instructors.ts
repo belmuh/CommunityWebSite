@@ -11,8 +11,12 @@ export class Instructors {
 
   instructors = this.dataService.instructors;
 
-  getRandomColor(id: number): string {
-    const colors = ['primary', 'success', 'danger', 'warning', 'info', 'secondary', 'dark'];
-    return colors[id % colors.length];
-  }
+  
+  getAvatarColorClass(instructor: any): string {
+  // Örneğin uzmanlık alanına göre renk seç
+  if (instructor.expertise?.includes('React')) return 'avatar-blue';
+  if (instructor.expertise?.includes('Backend')) return 'avatar-green';
+  if (instructor.expertise?.includes('Data')) return 'avatar-yellow';
+  return 'avatar-purple';
+}
 }

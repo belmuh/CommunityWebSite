@@ -7,17 +7,25 @@ import { DataService } from '../services/data-service';
   templateUrl: './courses.html'
 })
 export class Courses {
-   dataService = inject(DataService);
+  dataService = inject(DataService);
 
-   courses = this.dataService.courses;
+  courses = this.dataService.courses;
 
-  getLevelColor(level?: string): string {
-    console.log("level" + level + " " +level?.toLocaleLowerCase('tr-TR'));
+  getLevelBgClass(level?: string): string {
     switch((level || 'başlangıç').toLocaleLowerCase('tr-TR').trim()) {
-      case 'başlangıç': return 'success';
-      case 'orta': return 'warning';
-      case 'ileri': return 'primary';
-      default: return 'secondary';
+      case 'başlangıç': return 'bg-beginner';
+      case 'orta': return 'bg-intermediate';
+      case 'ileri': return 'bg-advanced';
+      default: return '';
+    }
+  }
+
+  getLevelBadgeClass(level?: string): string {
+    switch((level || 'başlangıç').toLocaleLowerCase('tr-TR').trim()) {
+      case 'başlangıç': return 'badge-beginner';
+      case 'orta': return 'badge-intermediate';
+      case 'ileri': return 'badge-advanced';
+      default: return '';
     }
   }
 }

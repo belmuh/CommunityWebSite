@@ -1,41 +1,38 @@
-<div class="d-flex flex-column align-items-center" style="min-height: 100vh; padding-top: 2rem;">
-
-  <h5 class="text-center mb-3">Ders Takvimi</h5>
-
-    <div class="card shadow-sm p-4" style="width: 900px;">
-   
-        <div class="card-body">
-      
-
-      <div class="d-flex justify-content-between mb-3">
-        <div>
-          <button class="btn btn-secondary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
-            Önceki
+<div class="container my-5 d-flex flex-column align-items-center">
+  <div class="text-center mb-5">
+    <p class="mb-0 text-light" style="font-size: 1.1rem;">
+      Topluluğumuzun yaklaşan ders ve etkinliklerini buradan takip edebilirsin!
+    </p>
+  </div>
+<div class="card shadow-sm p-4" style="max-width: 900px; width: 100%; border-radius: 1rem;">
+  <div class="card-body">
+      <div class="d-flex justify-content-between mb-3 flex-wrap">
+        <div class="mb-2 mb-md-0">
+          <button class="btn " mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+            <<
           </button>
-          <button class="btn btn-secondary" mwlCalendarToday [(viewDate)]="viewDate">
+          <button class="btn " mwlCalendarToday [(viewDate)]="viewDate">
             Bugün
           </button>
-          <button class="btn btn-secondary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
-            Sonraki
+          <button class="btn " mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+            >>
           </button>
         </div>
-
         <div class="d-flex align-items-center">
-          <h3 class="me-3 mb-0">{{ viewDate | calendarDate: view + 'ViewTitle' : 'tr' }}</h3>
+          <h3 class="me-3 mb-0 text-light">{{ viewDate | calendarDate: view + 'ViewTitle' : 'tr' }}</h3>
           <div class="btn-group">
-            <button class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">
+            <button class="btn " (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">
               Ay
             </button>
-            <button class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
+            <button class="btn " (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
               Hafta
             </button>
-            <button class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">
+            <button class="btn " (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">
               Gün
             </button>
           </div>
         </div>
       </div>
-
       @switch (view) {
         @case (CalendarView.Month) {
           <mwl-calendar-month-view 
@@ -44,12 +41,12 @@
           />
         }
         @case (CalendarView.Week) {
-        <mwl-calendar-week-view 
-        [events]="events()" 
-        [viewDate]="viewDate" 
-        [dayStartHour]="17"
-        [dayEndHour]="23" 
-        (eventTimesChanged)="eventTimesChanged($event)" />
+          <mwl-calendar-week-view 
+            [events]="events()" 
+            [viewDate]="viewDate" 
+            [dayStartHour]="17"
+            [dayEndHour]="23" 
+            (eventTimesChanged)="eventTimesChanged($event)" />
         }
         @case (CalendarView.Day) {
           <mwl-calendar-day-view 

@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal, Injectable } from '@angular/core';
+import { Component, effect, inject, signal, Injectable,  DOCUMENT, OnDestroy, OnInit } from '@angular/core';
 import { DateAdapter, 
         provideCalendar, 
         CalendarPreviousViewDirective, 
@@ -47,9 +47,10 @@ class CustomDateFormatter extends CalendarDateFormatter {
     { provide: CalendarDateFormatter, useClass: CustomDateFormatter } 
   ],
  
-  templateUrl: './calendar.html'
+  templateUrl: './calendar.html',
+   styleUrls: ['../styles.scss']
 })
-export class Calendar {
+export class Calendar implements OnInit, OnDestroy{
   dataService = inject(DataService);
 
   instructors = this.dataService.instructors;
@@ -125,5 +126,25 @@ export class Calendar {
     event.start = newStart;
     event.end = newEnd;
     this.refresh.next();
+  }
+
+  private document = inject<Document>(DOCUMENT);
+
+  private readonly darkThemeClass = 'dark-theme';
+
+  ngOnInit(): void {
+      if (this.document?.body) {
+    this.document.body.classList.add(this.darkThemeClass);
+    // Required if using bootstrap
+    this.document.body.parentElement?.setAttribute('data-bs-theme', 'dark');
+      }
+  }
+
+  ngOnDestroy(): void {
+      if (this.document?.body) {
+    this.document.body.classList.remove(this.darkThemeClass);
+    // Required if using bootstrap
+    this.document.body.parentElement?.removeAttribute('data-bs-theme');
+      }
   }
 }

@@ -46,8 +46,8 @@ export class Home implements AfterViewInit, OnDestroy {
 
   private setupIntersectionObserver(): void {
     const options = {
-      rootMargin: '-100px 0px -60px 0px',
-      threshold: 0.15
+         rootMargin: '-100px 0px -60px 0px',
+    threshold: 0.15
     };
 
     this.observer = new IntersectionObserver((entries) => {

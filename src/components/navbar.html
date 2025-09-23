@@ -1,16 +1,17 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);" >
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
    <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#home">
-      <img src="logo.jpeg" alt="Logo" height="35" class="me-2">
+    <a class="navbar-brand d-flex align-items-center text-decoration-none" href="#home">
+      <img src="logo.jpeg" alt="Logo" height="35" class="me-2 rounded">
       <div>
-        <div class="fw-bold"
-          style="background: linear-gradient(45deg, #93c5fd, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        <div class="fw-bold text-info">
           Developer Community
         </div>
       </div>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    
+    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -18,7 +19,12 @@
       <ul class="navbar-nav ms-auto">
         @for (item of navItems; track item.id) {
         <li class="nav-item mx-2">
-          <a class="nav-link" [class.active]="isActive(item.id)" (click)="scrollTo(item.id, $event)" [href]="'#' + item.id">
+          <a class="nav-link fw-medium px-3 py-2 rounded-2 transition-all" 
+             [class.active]="isActive(item.id)" 
+             [class.text-info]="isActive(item.id)"
+             [class.bg-dark]="isActive(item.id)"
+             (click)="scrollTo(item.id, $event)" 
+             [href]="'#' + item.id">
             <i class="{{item.icon}} me-1"></i>{{item.label}}
           </a>
         </li>
