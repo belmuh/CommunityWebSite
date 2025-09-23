@@ -48,7 +48,7 @@ class CustomDateFormatter extends CalendarDateFormatter {
   ],
  
   templateUrl: './calendar.html',
-   styleUrls: ['../styles.scss']
+   styleUrls: ['./calendar.scss']
 })
 export class Calendar implements OnInit, OnDestroy{
   dataService = inject(DataService);

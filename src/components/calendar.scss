@@ -1,0 +1,26 @@
+@use 'angular-calendar/scss/angular-calendar' as angular-calendar;
+
+.dark-theme {
+  $bg-dark-primary: #1f262d;
+  $bg-dark-secondary: #394046;
+  $bg-active: #2c343a;
+  $text-color: #d5d6d7;
+  $border-color: rgb(0 0 0 / 60%);
+
+  @include angular-calendar.cal-theme(
+    (
+      bg-primary: $bg-dark-primary,
+      bg-secondary: $bg-dark-secondary,
+      weekend-color: indianred,
+      bg-active: $bg-active,
+      border-color: $border-color,
+      gray: $bg-dark-secondary,
+      today-bg: $bg-dark-secondary,
+      event-color-primary: $bg-dark-secondary,
+    )
+  );
+
+  .cal-month-view .cal-day-cell.cal-out-month .cal-day-number {
+    opacity: 0.15;
+  }
+}

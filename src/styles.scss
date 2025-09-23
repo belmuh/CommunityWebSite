@@ -1,7 +1,6 @@
-/* Minimal Custom CSS - Maximum Bootstrap Usage */
-@use 'angular-calendar/scss/angular-calendar';
 
-/* CSS Variables for consistency */
+@use '../src/components/calendar.scss';
+
 :root {
   --primary-gradient: linear-gradient(135deg, #0f172a, #1e293b);
   --accent-color: #14b8a6;
@@ -13,14 +12,12 @@
   --shadow-hover: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* Base body styling */
 body {
   background: var(--primary-gradient);
   color: var(--text-light)  !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Custom Navbar - using Bootstrap utilities where possible */
 .navbar {
   background: var(--card-bg) !important;
   backdrop-filter: blur(8px);
@@ -45,7 +42,7 @@ body {
   opacity: 1;
   transition: background 0.2s, color 0.2s;
 }
-/* Custom card styling */
+
 .card {
   background: rgba(30, 41, 59, 0.92) !important; /* Hafif koyu ve opak */
   border: 1px solid rgba(255,255,255,0.06);
@@ -57,7 +54,6 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
-/* Section headers with accent border */
 .section-header {
   border-left: 4px solid var(--accent-color);
 }
@@ -85,34 +81,3 @@ body {
 .avatar-2 { background: rgba(251,191,36,0.22); }
 .avatar-3 { background: rgba(168,85,247,0.22); }
 
-
-
-.dark-theme {
-  // First define some global color variables for your app, these are just for the demo, they can be anything you like
-  $bg-dark-primary: #1f262d;
-  $bg-dark-secondary: #394046;
-  $bg-active: #2c343a;
-  $text-color: #d5d6d7;
-  $border-color: rgb(0 0 0 / 60%);
-
-  // Call the calendar mixin with a sass color map of your theme. Every property is optional.
-  // For a list of all variables and how they are used,
-  // see https://github.com/mattlewis92/angular-calendar/tree/main/projects/angular-calendar/src/variables.scss
-  @include angular-calendar.cal-theme(
-    (
-      bg-primary: $bg-dark-primary,
-      bg-secondary: $bg-dark-secondary,
-      weekend-color: indianred,
-      bg-active: $bg-active,
-      border-color: $border-color,
-      gray: $bg-dark-secondary,
-      today-bg: $bg-dark-secondary,
-      event-color-primary: $bg-dark-secondary,
-    )
-  );
-
-  // How to override a non themable property, this was copied from chrome -> inspect element -> styles panel
-  .cal-month-view .cal-day-cell.cal-out-month .cal-day-number {
-    opacity: 0.15;
-  }
-}
